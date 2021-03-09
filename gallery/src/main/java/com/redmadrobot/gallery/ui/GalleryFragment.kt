@@ -107,7 +107,13 @@ class GalleryFragment : DialogFragment(), ExoPlayerCallbacks {
 
     override fun onResume() {
         applyWindowFullscreenStyle()
+        mediaViewController.adapter.resumeVideo(lastCheckedItemIndex)
         super.onResume()
+    }
+
+    override fun onStop() {
+        mediaViewController.adapter.pauseVideoAndHideController()
+        super.onStop()
     }
 
     private fun applyWindowFullscreenStyle() {

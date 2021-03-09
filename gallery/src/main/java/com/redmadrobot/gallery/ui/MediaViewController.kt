@@ -11,7 +11,7 @@ internal class MediaViewController(
         private val onImageZoomListener: (isZoomed: Boolean) -> Unit
 ) {
 
-    private lateinit var adapter: MediaPagerAdapter
+    lateinit var adapter: MediaPagerAdapter
 
     fun bind(listOfMedia: List<Media>) {
 
